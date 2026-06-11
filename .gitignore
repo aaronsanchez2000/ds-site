@@ -1,6 +1,8 @@
 creds.env
 .env
 .env.*
+contact.env
+data/contact.js
 node_modules/
 SECURITY.md
 SECURITY_CHECKLIST.md

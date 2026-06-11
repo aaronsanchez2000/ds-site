@@ -1,5 +1,8 @@
 {
   "name": "danny-styles-site",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "generate:contact": "node scripts/generate-contact.mjs"
+  }
 }

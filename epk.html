@@ -7,6 +7,7 @@
     <title>EPK | Danny Styles</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" type="image/png" href="assets/favicon64.png" />
+    <script defer src="data/contact.js"></script>
     <script defer src="js/data-loader.js"></script>
     <script defer src="js/main.js"></script>
   </head>
@@ -149,17 +150,17 @@
           <span class="stamp">Contact Info</span>
           <p>
             <span class="contact-label">Email:</span>
-            <a href="mailto:dxnnystyleslv@gmail.com">dxnnystyleslv@gmail.com</a>
+            <a data-contact-link="email" data-contact-text="value" href="#"></a>
           </p>
           <p>
             <span class="contact-label">Text:</span>
-            <a href="tel:+16162870590">616-287-0590</a>
+            <a data-contact-link="phone" data-contact-text="value" href="#"></a>
           </p>
           <div class="actions">
-            <a class="button-secondary" href="mailto:dxnnystyleslv@gmail.com"
+            <a class="button-secondary" data-contact-link="email" data-contact-text="label" href="#"
               >Email Danny</a
             >
-            <a class="button-secondary" href="tel:+16162870590">Text Danny</a>
+            <a class="button-secondary" data-contact-link="sms" data-contact-text="label" href="#">Text Danny</a>
           </div>
         </div>
         <div class="paper-panel">
