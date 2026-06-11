@@ -1,0 +1,7 @@
+creds.env
+.env
+.env.*
+node_modules/
+SECURITY.md
+SECURITY_CHECKLIST.md
+SECURITY_REPORT.md
