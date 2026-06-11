@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Merch placeholder</title>
+  <desc id="desc">Replaceable merch product image placeholder.</desc>
+  <rect width="1200" height="900" fill="#d9cfaa"/>
+  <filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3"/><feComponentTransfer><feFuncA type="table" tableValues="0 .2"/></feComponentTransfer></filter>
+  <rect width="1200" height="900" filter="url(#n)"/>
+  <path d="M367 176 475 122h250l108 54 125 168-150 99-55-79v366H447V364l-55 79-150-99z" fill="#191713" stroke="#8e3428" stroke-width="18"/>
+  <text x="600" y="476" text-anchor="middle" font-family="Impact, Arial Black, sans-serif" font-size="72" fill="#d9cfaa">DS</text>
+  <text x="100" y="824" font-family="Courier New, monospace" font-size="42" fill="#191713">MERCH IMAGE PLACEHOLDER</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Release placeholder cover</title>
+  <desc id="desc">Replaceable dusty album cover placeholder.</desc>
+  <rect width="1200" height="1200" fill="#dad0aa"/>
+  <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="4"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .24"/></feComponentTransfer></filter>
+  <rect width="1200" height="1200" filter="url(#paper)"/>
+  <rect x="88" y="88" width="1024" height="1024" fill="#1a1712"/>
+  <circle cx="600" cy="544" r="340" fill="#333026"/>
+  <circle cx="600" cy="544" r="82" fill="#a94931"/>
+  <text x="122" y="1030" font-family="Courier New, monospace" font-size="48" fill="#dad0aa">REPLACE COVER IMAGE</text>
+</svg>
