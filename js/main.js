@@ -36,7 +36,11 @@
     if (!value || typeof value !== "string") return "";
 
     const trimmed = value.trim();
-    if (!trimmed || hasUnsafeCharacters(trimmed) || BLOCKED_PROTOCOL_RE.test(trimmed)) {
+    if (
+      !trimmed ||
+      hasUnsafeCharacters(trimmed) ||
+      BLOCKED_PROTOCOL_RE.test(trimmed)
+    ) {
       return "";
     }
 
@@ -1202,6 +1206,43 @@
     inner.append(brand, quick, follow, copy);
   }
 
+  function renderContactDetails() {
+    const contact = window.DS_CONTACT;
+    if (!contact) return;
+
+    const email = String(contact.email || "").trim();
+    const phoneDisplay = String(contact.phoneDisplay || "").trim();
+    const phoneE164 = String(contact.phoneE164 || "").trim();
+    const smsE164 = String(contact.smsE164 || phoneE164).trim();
+
+    const hrefByType = {
+      email: email ? `mailto:${email}` : "",
+      phone: phoneE164 ? `tel:${phoneE164}` : "",
+      sms: smsE164 ? `sms:${smsE164}` : "",
+    };
+
+    const textByType = {
+      email,
+      phone: phoneDisplay,
+      sms: phoneDisplay,
+    };
+
+    $$("[data-contact-link]").forEach((link) => {
+      const type = link.getAttribute("data-contact-link");
+      const mode = link.getAttribute("data-contact-text") || "value";
+      const href = hrefByType[type] || "";
+      if (!href) {
+        link.hidden = true;
+        return;
+      }
+      setSafeHref(link, href, { allowContactProtocols: true });
+      if (mode === "value") {
+        link.textContent = textByType[type] || "";
+      }
+      link.hidden = false;
+    });
+  }
+
   function renderEpkSelectedReleases() {
     const root = $("[data-selected-releases]");
     if (!root || !window.DS_RELEASES) return;
@@ -1249,4 +1290,5 @@
   renderGear();
   renderCredits();
   renderEpkSelectedReleases();
+  renderContactDetails();
 })();
