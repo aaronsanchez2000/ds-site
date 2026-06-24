@@ -283,10 +283,29 @@
     return raw.charAt(0).toUpperCase() + raw.slice(1).toLowerCase();
   }
 
+  function getLatestRelease(releases) {
+    const list = Array.isArray(releases) ? releases : [];
+    if (!list.length) return null;
+
+    return list
+      .map((release, index) => ({
+        release,
+        index,
+        time: Date.parse(String(release?.releaseDate || "")),
+      }))
+      .sort((a, b) => {
+        const aValid = Number.isFinite(a.time);
+        const bValid = Number.isFinite(b.time);
+        if (aValid && bValid && a.time !== b.time) return b.time - a.time;
+        if (aValid !== bValid) return aValid ? -1 : 1;
+        return a.index - b.index;
+      })[0]?.release || null;
+  }
+
   function resolveTrackAudioUrl(release, track) {
     const source = String(track?.audioFile || track?.audioUrl || "").trim();
     if (!source) return "";
-    if (release?.audioFolder) {
+    if (release?.audioFolder && !source.includes("/")) {
       return escapeUrl(encodeURI(`${release.audioFolder}${source}`));
     }
     return escapeUrl(encodeURI(source));
@@ -295,7 +314,7 @@
   function renderLatestRelease() {
     const target = $("[data-latest-release]");
     if (!target || !window.DS_RELEASES) return;
-    const release = window.DS_RELEASES[0];
+    const release = getLatestRelease(window.DS_RELEASES);
     if (!release) return;
     const playableTracks = (release.tracklist || [])
       .map((track, index) => ({
@@ -551,7 +570,7 @@
   function renderEpkLatestRelease() {
     const target = $("[data-epk-latest-release]");
     if (!target || !window.DS_RELEASES) return;
-    const release = window.DS_RELEASES[0];
+    const release = getLatestRelease(window.DS_RELEASES);
     const spotifyUrl = release?.links?.spotify || release?.spotifyUrl || "";
     const match = String(spotifyUrl).match(
       /open\.spotify\.com\/album\/([A-Za-z0-9]+)/i,

@@ -1,5 +1,82 @@
 [
   {
+    "title": "menthol blend",
+    "releaseDate": "2026-07-03",
+    "displayDate": "Jun 5, 2026",
+    "type": "ALBUM",
+    "selected": 1,
+    "audioFolder": "music/mentholblend-AVs/",
+    "coverImage": "assets/covers/menthol5.png",
+    "tracklist": [
+      {
+        "title": "cole slaw",
+        "trackNumber": 1,
+        "duration": 124,
+        "audioFile": "1 cole slaw.wav"
+      },
+      {
+        "title": "high beams",
+        "trackNumber": 2,
+        "duration": 142,
+        "audioFile": "2 high beams.wav"
+      },
+      {
+        "title": "petrichor",
+        "trackNumber": 3,
+        "duration": 117,
+        "audioFile": "3 petrichor.wav"
+      },
+      {
+        "title": "only one III",
+        "trackNumber": 4,
+        "duration": 120,
+        "audioFile": "4 only one.wav"
+      },
+      {
+        "title": "noodle",
+        "trackNumber": 5,
+        "duration": 115,
+        "audioFile": "5 noodle.wav"
+      },
+      {
+        "title": "sole claw",
+        "trackNumber": 6,
+        "duration": 56,
+        "audioFile": "6 sole claw.wav"
+      },
+      {
+        "title": "goose hunt",
+        "trackNumber": 7,
+        "duration": 150,
+        "audioFile": "7 goose hunt.wav"
+      },
+      {
+        "title": "bernese II",
+        "trackNumber": 8,
+        "duration": 84,
+        "audioFile": "8 bernese.wav"
+      },
+      {
+        "title": "montana",
+        "trackNumber": 9,
+        "duration": 114,
+        "audioFile": "9 montana.wav"
+      },
+      {
+        "title": "rice bowl",
+        "trackNumber": 10,
+        "duration": 112,
+        "audioFile": "10 rice bowl.wav"
+      }
+    ],
+    "links": {
+      "spotify": "",
+      "appleMusic": "",
+      "bandcamp": "",
+      "youtube": ""
+    }
+  },
+  {
     "title": "slappywax",
     "releaseDate": "2026-06-05",
     "displayDate": "Jun 5, 2026",
@@ -593,7 +670,7 @@
     "coverImage": "https://i.scdn.co/image/ab67616d0000b273a42cffd07ab1a640d6340ef5",
     "tracklist": [
       {
-        "title": "only one",
+        "title": "only one II",
         "trackNumber": 1,
         "duration": 67
       },

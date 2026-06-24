@@ -526,9 +526,15 @@ p {
 
 .hero-actions > .button .hero-button-icon {
   filter: brightness(0) saturate(100%);
+  transition: filter 0.18s ease;
 }
 
 .hero-actions > .button-secondary .hero-button-icon {
+  filter: brightness(0) invert(1) saturate(100%);
+}
+
+.hero-actions > .button:hover .hero-button-icon,
+.hero-actions > .button:focus-visible .hero-button-icon {
   filter: brightness(0) invert(1) saturate(100%);
 }
 

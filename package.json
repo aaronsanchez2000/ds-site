@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate:contact": "node scripts/generate-contact.mjs"
+    "generate:contact": "node scripts/generate-contact.mjs",
+    "validate:data": "node scripts/validate-releases.mjs"
   }
 }
