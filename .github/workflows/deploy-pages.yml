@@ -2,8 +2,6 @@ name: Deploy GitHub Pages
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 4 3 7 *" # June 26, 2026 at 12:00 AM EDT
 
 permissions:
   contents: read
