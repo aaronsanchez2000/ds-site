@@ -1,6 +1,9 @@
 name: Deploy GitHub Pages
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -30,13 +33,30 @@ jobs:
       - name: Validate release data
         run: npm run validate:data
 
-      - name: Generate contact file
-        env:
-          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
-          CONTACT_PHONE_DISPLAY: ${{ secrets.CONTACT_PHONE_DISPLAY }}
-          CONTACT_PHONE_E164: ${{ secrets.CONTACT_PHONE_E164 }}
-          CONTACT_SMS_E164: ${{ secrets.CONTACT_SMS_E164 }}
-        run: npm run generate:contact
+      - name: Prepare Pages artifact
+        run: |
+          rm -rf site
+          mkdir -p site
+          cp -R \
+            index.html \
+            about.html \
+            contact.html \
+            credits.html \
+            epk.html \
+            gear.html \
+            merch.html \
+            music.html \
+            CNAME \
+            robots.txt \
+            sitemap.xml \
+            site.webmanifest \
+            assets \
+            css \
+            data \
+            js \
+            music \
+            site/
+          touch site/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -44,7 +64,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: site
 
       - name: Deploy to GitHub Pages
         id: deployment
